@@ -6,7 +6,7 @@ module.exports = {
         "raisin": "#110F10",
         "raisin-light": "#201B1D",
         "outor": "#FC7752",
-        "celadon": "#80A7",
+        "celadon": "#0081A7",
         "mint": "#3DDC97",
         "lemon": "#FFFFB2"
       },
