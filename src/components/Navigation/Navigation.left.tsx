@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { InferProps } from "prop-types";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const NavButton = ({name, active, setActive}: InferProps<any>) => {
 
@@ -10,7 +11,7 @@ const NavButton = ({name, active, setActive}: InferProps<any>) => {
 
   return (
    <div className={`item p-4 ${active ? "": ""} rounded-sm cursor-pointer`} onClick={handleChange}>
-     {name}
+     <Link to={name.toLowerCase()}>{name}</Link>
    </div> 
   )
 }
@@ -23,7 +24,6 @@ const navlist = [
 
 const Left = () => {
   const [whichActive, setActive] = useState("Wallets")
-  console.log(whichActive, navlist)
   
   return (
     <div className="font-medium bg-raisin p-2 rounded-sm shadow-lg flex flex-row gap-1">

@@ -3,13 +3,14 @@ import { useContext, useEffect, useState } from "react"
 import { toSvg, update } from "jdenticon"
 import { RiArrowDropDownLine } from "react-icons/ri"
 import { Web3Context, Web3UpdateContext } from "../../context/web3context"
+import { Link, useNavigate } from "react-router-dom"
 const WALLET_MSG = "Connect to Wallet"
 
 const Right = () => {
   const {account, account_ui, profile_svg, provider} = useContext(Web3Context)
   const {updateAccount, updateAccount_ui, updateProfile_svg, updateProvider} = useContext(Web3UpdateContext)
   const [dropdownOpen, setDropdownOpen] = useState<any>(false)
-
+  const navigate = useNavigate()
   useEffect(() => {
     //@ts-ignore
     updateProvider(new ethers.providers.Web3Provider(window.ethereum))
@@ -38,6 +39,7 @@ const Right = () => {
     updateAccount_ui("")
     updateProfile_svg("")
     setDropdownOpen(false)
+    navigate("/")
     window.location.reload()
   }
 
@@ -50,7 +52,7 @@ const Right = () => {
       WALLET_MSG}</span>
       <div className={dropdownOpen ? "absolute translate-y-24 translate-x-28": "hidden"}>
         <div className="settings bg-raisin-light text-white p-2 border border-raisin shadow-md rounded">
-          <div className="p-2 hover:bg-neutral-800">Settings</div>
+          <div className="p-2 hover:bg-neutral-800"><Link to="/settings">Settings</Link></div>
           <div className="p-2 hover:bg-neutral-800" onClick={copyToClipBoard}>Copy address</div>
           <div className="h-1 w-full bg-neutral-900 my-2" />
           <div className="p-2 text-outor hover:bg-neutral-800" onClick={logout}>Logout</div>
