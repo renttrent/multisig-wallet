@@ -52,7 +52,7 @@ const Right = () => {
       WALLET_MSG}</span>
       <div className={dropdownOpen ? "absolute translate-y-24 translate-x-28": "hidden"}>
         <div className="settings bg-raisin-light text-white p-2 border border-raisin shadow-md rounded">
-          <div className="p-2 hover:bg-neutral-800"><Link to="/settings">Settings</Link></div>
+          <div className="p-2 hover:bg-neutral-800" onClick={() => {setDropdownOpen(false); navigate("/settings")}}>Settings</div>
           <div className="p-2 hover:bg-neutral-800" onClick={copyToClipBoard}>Copy address</div>
           <div className="h-1 w-full bg-neutral-900 my-2" />
           <div className="p-2 text-outor hover:bg-neutral-800" onClick={logout}>Logout</div>
