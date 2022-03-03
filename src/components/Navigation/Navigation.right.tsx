@@ -1,20 +1,15 @@
-import { ethers } from "ethers"
-import { useContext, useEffect, useState } from "react"
-import { toSvg, update } from "jdenticon"
+import { useContext, useState } from "react"
+import { toSvg } from "jdenticon"
 import { RiArrowDropDownLine } from "react-icons/ri"
 import { Web3Context, Web3UpdateContext } from "../../context/web3context"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 const WALLET_MSG = "Connect to Wallet"
 
 const Right = () => {
   const {account, account_ui, profile_svg, provider} = useContext(Web3Context)
-  const {updateAccount, updateAccount_ui, updateProfile_svg, updateProvider} = useContext(Web3UpdateContext)
+  const {updateAccount, updateAccount_ui, updateProfile_svg } = useContext(Web3UpdateContext)
   const [dropdownOpen, setDropdownOpen] = useState<any>(false)
   const navigate = useNavigate()
-  useEffect(() => {
-    //@ts-ignore
-    updateProvider(new ethers.providers.Web3Provider(window.ethereum))
-  }, [])
 
   const signIn = async () => {
     if(!provider) {
@@ -34,7 +29,6 @@ const Right = () => {
   }
 
   const logout = () => {
-    updateProvider(undefined)
     updateAccount("")
     updateAccount_ui("")
     updateProfile_svg("")

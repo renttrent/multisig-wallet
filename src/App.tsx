@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import Wallet from './components/Wallet';
@@ -10,11 +10,12 @@ function App() {
 
   if(!provider) {
     return (
-      <>
        <Welcome /> 
-      </>
     )
   }
+
+  console.log(provider)
+
   return (
     <Router>
     <div className='home'>

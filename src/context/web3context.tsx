@@ -1,6 +1,7 @@
 import { Provider } from "@ethersproject/providers";
+import { ethers } from "ethers";
 import { InferProps } from "prop-types";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 interface Web3 {
   account: string | undefined,
@@ -39,6 +40,13 @@ const Web3Provider = ({children}: InferProps<any>) => {
   const [profile_svg, setProfile_svg] = useState("")
   const [provider, setProvider] = useState(undefined)
 
+  useEffect(() => {
+    //@ts-ignore
+    if(window.ethereum){
+      //@ts-ignore
+      setProvider(new ethers.providers.Web3Provider(window.ethereum))
+    }
+  }, [])
   const updateAccount = (input: string) => { setAccount(input) }
   const updateAccount_ui = (input: string) => { setAccount_ui(input) }
   const updateProfile_svg = (input: string) => { setProfile_svg(input) }

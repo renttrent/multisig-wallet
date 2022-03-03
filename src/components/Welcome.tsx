@@ -14,7 +14,7 @@ export const Welcome = () => {
     }}
     >
       <div className="title p-6 text-2xl font-bold bg-white text-raisin-light rounded-sm shadow-raisin shadow-xl">
-        Welcome to My Multisig Wallet App.
+        Welcome to My Multi-signature Wallet App.
         <div className="text-lg font-semibold mt-2">
           This app allows you to create a multisig wallet as a smart contract on Ethereum
         </div>

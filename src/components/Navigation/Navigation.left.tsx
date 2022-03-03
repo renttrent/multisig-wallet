@@ -31,8 +31,10 @@ const Left = () => {
         return <NavButton key={item} name={item} active={whichActive === item} setActive={setActive}/>
       })}
       <motion.div className="absolute bg-red-400 h-1 rounded"
+      style={{
+        translateY: 48
+      }}
       animate={{
-        y: 46,
         x: whichActive === "Wallets" ? 2 : whichActive === "Signers" ? 90 : 180,
         width: whichActive === "Wallets" ? 82 : whichActive === "Signers" ? 82 : 54,
       }}
