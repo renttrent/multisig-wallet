@@ -4,7 +4,7 @@ import { BiDownArrow, BiRightArrow } from "react-icons/bi"
 
 export const Welcome = () => {
 
-  const [showMore, setShowMore] = useState(true)
+  const [showMore, setShowMore] = useState(false)
 
   return (
     <div className="w-1/2 m-auto">
@@ -13,7 +13,7 @@ export const Welcome = () => {
       scale: 1.01
     }}
     >
-      <div className="title p-2 text-2xl font-bold bg-white text-raisin-light rounded-sm shadow-raisin shadow-xl">
+      <div className="title p-6 text-2xl font-bold bg-white text-raisin-light rounded-sm shadow-raisin shadow-xl">
         Welcome to My Multisig Wallet App.
         <div className="text-lg font-semibold mt-2">
           This app allows you to create a multisig wallet as a smart contract on Ethereum

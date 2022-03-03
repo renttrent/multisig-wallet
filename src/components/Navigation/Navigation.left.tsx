@@ -28,7 +28,6 @@ const Left = () => {
   return (
     <div className="font-medium bg-raisin p-2 rounded-sm shadow-lg flex flex-row gap-1">
       {navlist.map((item) => {
-        console.log(whichActive === item)
         return <NavButton key={item} name={item} active={whichActive === item} setActive={setActive}/>
       })}
       <motion.div className="absolute bg-red-400 h-1 rounded"

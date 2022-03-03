@@ -1,10 +1,20 @@
+import { useContext } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import Wallet from './components/Wallet';
 import { Welcome } from './components/Welcome';
+import { Web3Context } from './context/web3context';
 
 function App() {
+  const { provider } = useContext(Web3Context)
 
+  if(!provider) {
+    return (
+      <>
+       <Welcome /> 
+      </>
+    )
+  }
   return (
     <Router>
     <div className='home'>
