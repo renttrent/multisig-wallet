@@ -8,13 +8,13 @@ export const Welcome: React.FC<{}> = () => {
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <div className="w-1/2 m-auto">
+    <div className="w-10/12 md:w-1/2 m-auto">
     <motion.div className="mt-10"
     whileHover={{
       scale: 1.01
     }}
     >
-      <div className="title p-6 text-2xl font-bold bg-white text-raisin-light rounded-sm shadow-raisin shadow-xl">
+      <div className="title w-full p-6 text-2xl font-bold bg-white text-raisin-light rounded-sm shadow-raisin shadow-xl">
         Welcome to My Multi-signature Wallet App.
         <div className="text-lg font-semibold mt-2">
           This app allows you to create a multisig wallet as a smart contract on Ethereum
