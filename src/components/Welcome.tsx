@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { BiDownArrow, BiRightArrow } from "react-icons/bi"
+import { BiRightArrow } from "react-icons/bi"
+import { FaGithub, FaTwitter } from "react-icons/fa"
 
-export const Welcome = () => {
+export const Welcome: React.FC<{}> = () => {
 
   const [showMore, setShowMore] = useState(false)
 
@@ -51,7 +52,29 @@ export const Welcome = () => {
     }}
     >
       <div className="p-2 bg-raisin text-white rounded-sm">
-        Hey
+        <div className=" text-lg">
+        Hey! My name is Rei. I love making websites and coding in general. Lately focusing on web3 developement, it looks interesting to me.
+        </div>
+        <div className="mt-4 text-gray-300 flex flex-row gap-3 items-center">
+          You can follow me here: 
+          <span className="flex flex-row gap-2 items-center">
+            <FaGithub className="text-outor hover:text-gray-50 cursor-pointer" onClick={() => window.location.href = "https://github.com/renttrent"}/>
+            <FaTwitter className="text-outor hover:text-gray-50 cursor-pointer" onClick={() => window.location.href = "https://twitter.com/reithedev"}/>
+          </span>
+        </div>
+        <div className="mt-2 text-lg">
+          Also I have a {" "}
+          <motion.a href="https://reithedev.xyz"
+            whileHover={{
+              color: "#0081A7"
+            }}
+            transition={{
+              delay: 0.007
+            }}
+          >
+            website
+          </motion.a>
+        </div>
       </div>
     </motion.div>
     }

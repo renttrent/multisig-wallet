@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { InferProps } from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const NavButton = ({name, active, setActive}: InferProps<any>) => {
+const NavButton: React.FC<{name: any, active: any, setActive: any}> = ({name, active, setActive}) => {
 
   const handleChange = () => {
     setActive(name)

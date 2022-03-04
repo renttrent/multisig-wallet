@@ -1,7 +1,7 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import Navigation from './components/Navigation/Navigation';
-import Wallet from './components/Wallet';
+import { Navigation } from './components/Navigation/Navigation';
+import { Wallet } from './components/Wallet';
 import { Welcome } from './components/Welcome';
 import { Web3Context } from './context/web3context';
 
