@@ -51,7 +51,7 @@ export const Welcome: React.FC<{}> = () => {
       y: 10
     }}
     >
-      <div className="p-2 bg-raisin text-white rounded-sm">
+      <div className="p-8 bg-raisin text-white rounded-sm">
         <div className=" text-lg">
         Hey! My name is Rei. I love making websites and coding in general. Lately focusing on web3 developement, it looks interesting to me.
         </div>
